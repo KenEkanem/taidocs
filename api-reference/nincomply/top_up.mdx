@@ -1,0 +1,25 @@
+---
+title: "Top Up"
+api: "POST {{base_url}}/api/v1/business/top-up"
+description: "### POST /api/v1/business/top-up  This endpoint is used to top up business credits."
+---
+
+### Body
+
+<ParamField body="number_of_credits" placeholder="150" type="string" required>
+    (Required, integer) - The number of credits the user wants to pay for.
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+    Response message.
+</ResponseField>
+
+<ResponseExample>
+```json Response
+{
+  "message": "Success"
+}
+```
+</ResponseExample>

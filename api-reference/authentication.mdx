@@ -1,0 +1,19 @@
+---
+title: "Authentication"
+description: "How to authenticate requests to the API"
+---
+
+All API requests must be authenticated. We use Bearer Token authentication. You will receive an API key upon account creation 
+that must be included in the `Authorization` header of your requests.
+
+```bash
+'Authorization': 'Bearer <team_token>'
+```
+
+<Warning>
+  **Important**: Keep your API key secure and do not expose it in client-side code.
+</Warning>
+
+
+
+

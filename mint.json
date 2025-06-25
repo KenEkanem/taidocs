@@ -1,0 +1,127 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Trust and Identity Solutions",
+  "logo": {
+    "dark": "/images/tai-dark.svg",
+    "light": "/images/tai-light.png"
+  },
+  "favicon": "/images/favicon.png",
+  "colors": {
+    "primary": "#FE0000",
+    "light": "#F5F5F5",
+    "dark": "#262626",
+    "background": {
+      "dark": "#090014"
+    },
+    "anchors": {
+      "from": "#FF7F57",
+      "to": "#9563FF"
+    }
+  },
+  "typography": {
+    "fontFamily": "Inter, sans-serif",
+    "code": {
+      "fontFamily": "Menlo, monospace"
+    }
+  },
+  
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Support",
+      "icon": "gear",
+      "url": "mailto:support@dragnet-solutions.com"
+    },
+    {
+      "name": "Contact Sales",
+      "icon": "envelope",
+      "url": "mailto:sales@dragnet-solutions.com"
+    },
+    {
+      "name": "Company Website",
+      "icon": "globe",
+      "url": "https://www.trustandidentitycom"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/introduction",
+        "getting-started/overview"
+      ]
+    },
+    {
+      "group": "Products",
+      "pages": [
+        "docs/products/ninprofile",
+        "docs/products/nincomply",
+        "docs/products/referenceme",
+        "docs/products/e-signatures",
+        "docs/products/nin-based-surveillance"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/setting-up-ninprofile",
+        "guides/managing-profile",
+        "guides/troubleshooting"
+      ]
+    },
+    {
+      "group": "Tools",
+      "pages": [
+        "guides/php-sdk",
+        "guides/python-sdk"
+      ]
+    },
+    {
+      "group": "Configuration",
+      "pages": [
+        "configuration/verify",
+        "configuration/export"
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/api-overview",
+        "api-reference/base-url",
+        "api-reference/authentication"
+      ]
+    },
+    {
+      "group": "Automations",
+      "pages": [
+        "api-reference/actions/verify"
+      ]
+    },
+    {
+      "group": "Resources ",
+      "pages": [
+        "docs/faq",
+        "docs/glossary"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "linkedin": "https://linkedin.com/in/dragnet",
+    "github": "https://github.com/yourcompany"
+  },
+  "api": {
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "analytics": {
+    "pirsch": {
+      "id": "jkjk"
+    }
+  }
+}

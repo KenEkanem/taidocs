@@ -1,0 +1,139 @@
+---
+title: 'Installing PHP on Linux'
+description: 'How to Install PHP on Linux (Ubuntu/Debian): A Step-by-Step Guide'
+icon: 'php'
+---
+Are you looking to set up a robust web development environment on your Linux machine? PHP is a powerful server-side scripting language, essential for building dynamic websites and web applications. This guide will walk you through the process of installing PHP on a Debian-based distribution like Ubuntu, along with the Apache web server and crucial PHP extensions.
+
+---
+
+## Prerequisites
+
+Before we dive in, make sure you have:
+
+- A Linux machine running a Debian-based distribution (e.g., Ubuntu, Debian).
+- `sudo` privileges on your system.
+- An active internet connection.
+
+---
+
+## Step 1: Update Your Package List
+
+It's always a good practice to refresh your system's package list before installing new software. This ensures you're getting the latest available versions and dependencies.
+
+```bash
+sudo apt update -y
+
+```
+
+This command fetches the latest information about packages from your configured repositories.
+
+---
+
+## Step 2: Install Apache2 Web Server
+
+PHP typically works hand-in-hand with a web server. Apache2 is a popular, open-source web server known for its power and flexibility.
+
+```bash
+sudo apt install apache2 -y
+```
+
+Once installed, you can verify if Apache is running by opening your web browser and navigating to `http://localhost`. You should see the Apache Ubuntu Default Page.
+
+---
+
+## Step 3: Install PHP and Essential Extensions
+
+Now, let's install PHP itself and some critical extensions that most PHP applications require. For this guide, we'll focus on PHP 8.3, but you can adjust the version if needed.
+
+```bash
+# Define your desired PHP version (e.g., php8.1, php8.2, php8.3)
+PHP_VERSION="php8.3"
+
+sudo apt install -y "${PHP_VERSION}" \
+    "${PHP_VERSION}"-cli \
+    "${PHP_VERSION}"-common \
+    "${PHP_VERSION}"-mysql \
+    "${PHP_VERSION}"-xml \
+    "${PHP_VERSION}"-mbstring \
+    "${PHP_VERSION}"-gd \
+    "${PHP_VERSION}"-curl \
+    "${PHP_VERSION}"-zip \
+    "${PHP_VERSION}"-opcache \
+    "${PHP_VERSION}"-fpm
+```
+
+### Breakdown of Packages:
+
+* `${PHP_VERSION}`: The core PHP package.
+* `${PHP_VERSION}`-cli: Command Line Interface for running PHP scripts from the terminal.
+* `${PHP_VERSION}`-common: Common files for PHP.
+* `${PHP_VERSION}`-mysql: Enables PHP to connect to MySQL/MariaDB databases.
+* `${PHP_VERSION}`-xml: Support for XML parsing.
+* `${PHP_VERSION}`-mbstring: Provides multi-byte string functions, crucial for handling various character encodings.
+* `${PHP_VERSION}`-gd: For image manipulation (e.g., creating thumbnails, watermarks).
+* `${PHP_VERSION}`-curl: Allows PHP to make requests to other URLs.
+* `${PHP_VERSION}`-zip: For working with ZIP archives.
+* `${PHP_VERSION}`-opcache: A performance-boosting extension that caches compiled PHP bytecode.
+* `${PHP_VERSION}`-fpm: FastCGI Process Manager, highly recommended for better performance and resource management.
+
+---
+
+## Step 4: Enable PHP-FPM for Apache
+
+To make Apache work seamlessly and efficiently with PHP-FPM, we need to enable a few Apache modules and the PHP-FPM configuration.
+
+```bash
+sudo a2enmod proxy_fcgi setenvif
+sudo a2enconf "${PHP_VERSION}"-fpm
+sudo a2dismod mpm_prefork
+sudo a2enmod mpm_event
+```
+
+These commands:
+
+* Enable `proxy_fcgi` and `setenvif`: Modules required for Apache to communicate with FastCGI.
+* Enable the PHP-FPM configuration for your specific PHP version.
+* Disable `mpm_prefork` and enable `mpm_event`: `mpm_event` works better with PHP-FPM.
+
+---
+
+## Step 5: Restart Apache to Apply Changes
+
+For all the changes to take effect, restart the Apache web server.
+
+```bash
+sudo systemctl restart apache2
+```
+
+---
+
+## Step 6: Verify Your PHP Installation
+
+To confirm that PHP is installed and correctly configured with Apache, create a simple PHP info file.
+
+```bash
+sudo bash -c "echo '<?php phpinfo(); ?>' > /var/www/html/info.php"
+```
+
+Now, open your web browser and navigate to:
+`http://localhost/info.php`
+
+You should see a detailed page displaying your PHP configuration, installed extensions, and other valuable information.
+
+### Important Security Note
+
+Once you've verified your installation, remove the `info.php` file to avoid exposing sensitive server details.
+
+```bash
+sudo rm /var/www/html/info.php
+```
+
+---
+
+## 🎉 Conclusion
+
+Congratulations! You have successfully installed PHP, Apache, and essential PHP extensions on your Linux system. You now have a solid foundation for developing and hosting PHP-based web applications.
+
+**Happy coding!**
+

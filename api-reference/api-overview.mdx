@@ -1,0 +1,42 @@
+
+Welcome to the Trust and Identity Solutions API Reference. Our APIs allow you to seamlessly integrate our secure identity verification, compliance, and e-signature functionalities directly into your applications.
+
+---
+
+### Rate Limits
+
+To ensure fair usage and system stability, our APIs are subject to rate limits. Exceeding these limits may result in `429 Too Many Requests` errors. Please refer to specific endpoint documentation for detailed rate limit information.
+
+### Error Handling
+
+Our API uses standard HTTP status codes to indicate the success or failure of an API request.
+
+- `2xx` - Success  
+- `4xx` - Client error (e.g., bad request, unauthorized)  
+- `5xx` - Server error
+
+Error responses typically include a JSON payload with an `error` message and a `code` for easier debugging.
+
+```json
+{
+  "error": "Invalid NIN provided",
+  "code": "NIN_INVALID"
+}
+````
+
+---
+
+### Available API Endpoints
+
+Explore our API endpoints for specific functionalities:
+
+- **NIN Verification API**: Validate NINs in real-time.
+    
+- **E-Signature API**: Programmatically manage and verify NIN-linked e-signatures.
+    
+- **ReferenceMe API**: Integrate workforce accountability features.
+    
+- **Account Management API**: Manage user profiles and permissions.
+    
+
+(More detailed endpoint documentation will be available here, potentially generated from Postman collections.)

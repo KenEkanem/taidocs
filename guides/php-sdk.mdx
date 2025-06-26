@@ -1,8 +1,9 @@
 ---
-title: 'Installing PHP on Linux'
-description: 'How to Install PHP on Linux (Ubuntu/Debian): A Step-by-Step Guide'
-icon: 'php'
+title: "Using PHP SDK"
+description: "How to Install PHP on Linux (Ubuntu/Debian): A Step-by-Step Guide - SAMPLE GUIDE"
+icon: "php"
 ---
+
 Are you looking to set up a robust web development environment on your Linux machine? PHP is a powerful server-side scripting language, essential for building dynamic websites and web applications. This guide will walk you through the process of installing PHP on a Debian-based distribution like Ubuntu, along with the Apache web server and crucial PHP extensions.
 
 ---
@@ -23,7 +24,6 @@ It's always a good practice to refresh your system's package list before install
 
 ```bash
 sudo apt update -y
-
 ```
 
 This command fetches the latest information about packages from your configured repositories.
@@ -65,17 +65,17 @@ sudo apt install -y "${PHP_VERSION}" \
 
 ### Breakdown of Packages:
 
-* `${PHP_VERSION}`: The core PHP package.
-* `${PHP_VERSION}`-cli: Command Line Interface for running PHP scripts from the terminal.
-* `${PHP_VERSION}`-common: Common files for PHP.
-* `${PHP_VERSION}`-mysql: Enables PHP to connect to MySQL/MariaDB databases.
-* `${PHP_VERSION}`-xml: Support for XML parsing.
-* `${PHP_VERSION}`-mbstring: Provides multi-byte string functions, crucial for handling various character encodings.
-* `${PHP_VERSION}`-gd: For image manipulation (e.g., creating thumbnails, watermarks).
-* `${PHP_VERSION}`-curl: Allows PHP to make requests to other URLs.
-* `${PHP_VERSION}`-zip: For working with ZIP archives.
-* `${PHP_VERSION}`-opcache: A performance-boosting extension that caches compiled PHP bytecode.
-* `${PHP_VERSION}`-fpm: FastCGI Process Manager, highly recommended for better performance and resource management.
+- `${PHP_VERSION}`: The core PHP package.
+- `${PHP_VERSION}`-cli: Command Line Interface for running PHP scripts from the terminal.
+- `${PHP_VERSION}`-common: Common files for PHP.
+- `${PHP_VERSION}`-mysql: Enables PHP to connect to MySQL/MariaDB databases.
+- `${PHP_VERSION}`-xml: Support for XML parsing.
+- `${PHP_VERSION}`-mbstring: Provides multi-byte string functions, crucial for handling various character encodings.
+- `${PHP_VERSION}`-gd: For image manipulation (e.g., creating thumbnails, watermarks).
+- `${PHP_VERSION}`-curl: Allows PHP to make requests to other URLs.
+- `${PHP_VERSION}`-zip: For working with ZIP archives.
+- `${PHP_VERSION}`-opcache: A performance-boosting extension that caches compiled PHP bytecode.
+- `${PHP_VERSION}`-fpm: FastCGI Process Manager, highly recommended for better performance and resource management.
 
 ---
 
@@ -92,9 +92,9 @@ sudo a2enmod mpm_event
 
 These commands:
 
-* Enable `proxy_fcgi` and `setenvif`: Modules required for Apache to communicate with FastCGI.
-* Enable the PHP-FPM configuration for your specific PHP version.
-* Disable `mpm_prefork` and enable `mpm_event`: `mpm_event` works better with PHP-FPM.
+- Enable `proxy_fcgi` and `setenvif`: Modules required for Apache to communicate with FastCGI.
+- Enable the PHP-FPM configuration for your specific PHP version.
+- Disable `mpm_prefork` and enable `mpm_event`: `mpm_event` works better with PHP-FPM.
 
 ---
 
@@ -133,7 +133,4 @@ sudo rm /var/www/html/info.php
 
 ## 🎉 Conclusion
 
-Congratulations! You have successfully installed PHP, Apache, and essential PHP extensions on your Linux system. You now have a solid foundation for developing and hosting PHP-based web applications.
-
-**Happy coding!**
-
+Congratulations\! You have successfully installed PHP, Apache, and essential PHP extensions on your Linux system. You now have a solid foundation for developing and hosting PHP-based web applications.

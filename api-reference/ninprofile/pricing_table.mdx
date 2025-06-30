@@ -1,19 +1,34 @@
 ---
-title: "Pricing Table"
-api: "GET {{base_url}}/api/v1/pricing"
-description: "No description provided."
+title: "Pricing"
+api: "GET /api/v1/pricing"
+baseUrl: "https://postman-rest-api-learner.glitch.me"
+description: "Retrieve pricing information for credit usage and NIN verification."
 ---
 
-### Response
+# Get Pricing Table
 
-<ResponseField name="message" type="string">
-    Response message.
-</ResponseField>
+Returns a breakdown of pricing for verification and SSO actions.
 
-<ResponseExample>
-```json Response
+## Example Request
+
+```bash
+curl --location 'https://postman-rest-api-learner.glitch.me/api/v1/pricing'
+```
+
+## Response
+
+```json
 {
-  "message": "Success"
+  "success": true,
+  "message": "Pricing breakdown retrieved successfully.",
+  "data": [
+    {
+      "uuid": "083dd413-937e-43b7-b376-f0562bb7b76b",
+      "name": "credit_rate",
+      "value": "200",
+      "display_name": "Amount per credit",
+      "description": "1 credit costs 200 Naira"
+    }
+  ]
 }
 ```
-</ResponseExample>

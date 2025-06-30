@@ -1,37 +1,47 @@
 ---
-title: "Contact Us Message"
-api: "POST {{base_url}}/api/v1/contact-message"
-description: "No description provided."
+title: "Contact Message"
+api: "POST /api/v1/contact-message"
+baseUrl: "https://postman-rest-api-learner.glitch.me"
+description: "Submit a contact message to the support team."
 ---
 
-### Body
+# Submit Contact Message
 
-<ParamField body="name" placeholder="Kazeem Asifat" type="string" required>
-    Required
-</ParamField>
+Sends a contact message to support. Requires name, email, and message fields.
 
-<ParamField body="email" placeholder="damkaz.ak@gmail.com" type="string" required>
-    Required
-</ParamField>
+## Request Body (form-data)
 
-<ParamField body="subject" placeholder="A simple message" type="string" required>
-    Optional
-</ParamField>
+| Field   | Type   | Required | Description                        |
+|---------|--------|----------|------------------------------------|
+| name    | string | ✅ Yes   | Full name of sender                |
+| email   | string | ✅ Yes   | Email address                      |
+| subject | string | ❌ No    | Optional subject                   |
+| message | string | ✅ Yes   | Message body                       |
 
-<ParamField body="message" placeholder="This is a sample contact us message, it will definitely work" type="string" required>
-    Required
-</ParamField>
+## Example Request
 
-### Response
+```bash
+curl --location 'https://postman-rest-api-learner.glitch.me/api/v1/contact-message' \
+--form 'name="Kazeem Asifat"' \
+--form 'email="damkaz.ak@gmail.com"' \
+--form 'subject="A simple message"' \
+--form 'message="This is a sample contact us message, it will definitely work"'
+```
 
-<ResponseField name="message" type="string">
-    Response message.
-</ResponseField>
+## Response
 
-<ResponseExample>
-```json Response
+```json
 {
-  "message": "Success"
+  "success": true,
+  "message": "Contact message submitted successfully.",
+  "data": {
+    "uuid": "f7bf00fa-eaf3-418d-aa25-1997d41963b3",
+    "name": "Kazeem Asifat",
+    "email": "damkaz.ak@gmail.com",
+    "subject": "A simple message",
+    "message": "This is a sample contact us message, it will definitely work",
+    "date_submitted": "1 second ago",
+    "normal_date": "2025-02-22"
+  }
 }
 ```
-</ResponseExample>

@@ -105,11 +105,9 @@
         {
       "group": "Nin Profile",
       "pages": [
-        "api-reference/ninprofile/admin",
-        "api-reference/ninprofile/authentication",
-        "api-reference/ninprofile/business",
+        "api-reference/ninprofile/all_countries",
         "api-reference/ninprofile/contact_us_message",
-        "api-reference/ninprofile/individual_account"
+        "api-reference/ninprofile/pricing_table"
 
       ]
     },

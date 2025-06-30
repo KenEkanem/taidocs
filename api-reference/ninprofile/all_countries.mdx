@@ -1,19 +1,35 @@
 ---
-title: "All Countries"
-api: "GET {{base_url}}/api/v1/countries"
-description: "No description provided."
+title: "List Countries"
+api: "GET /api/v1/countries"
+baseUrl: "https://postman-rest-api-learner.glitch.me"
+description: "Retrieve a list of all countries with ISO codes and phone codes."
 ---
 
-### Response
+# Get All Countries
 
-<ResponseField name="message" type="string">
-    Response message.
-</ResponseField>
+Returns a list of countries with their ISO codes, flags, and phone codes.
 
-<ResponseExample>
-```json Response
+## Example Request
+
+```bash
+curl --location 'https://postman-rest-api-learner.glitch.me/api/v1/countries'
+```
+
+## Response
+
+```json
 {
-  "message": "Success"
+  "success": true,
+  "message": "Countries retrieved successfully",
+  "data": [
+    {
+      "id": 1,
+      "iso2": "AD",
+      "iso3": "AND",
+      "flag": "https://flagcdn.com/ad.svg",
+      "name": "Andorra",
+      "phone_code": "376"
+    }
+  ]
 }
 ```
-</ResponseExample>

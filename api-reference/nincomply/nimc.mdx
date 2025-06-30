@@ -1,19 +1,62 @@
 ---
-title: "NIMC"
-api: "GET URL_NOT_FOUND"
-description: "No description provided."
+title: "Verify NIN"
+api: "POST /nin/verify"
+baseUrl: "https://verification.nincomply.com/api/v1"
+description: "Verify a user's NIN with the provided number."
 ---
 
-### Response
+# Verify NIN
 
-<ResponseField name="message" type="string">
-    Response message.
-</ResponseField>
+Verifies a NIN (National Identification Number) using the provided number.
 
-<ResponseExample>
-```json Response
+## Endpoint
+
+```http
+POST /nin/verify
+```
+
+## Headers
+
+| Key            | Value                                | Required |
+|----------------|--------------------------------------|----------|
+| Authorization  | Bearer {API_KEY}                     | ✅ Yes   |
+| Content-Type   | multipart/form-data                  | ✅ Yes   |
+
+## Request Body
+
+| Field | Type   | Description       | Required |
+|-------|--------|-------------------|----------|
+| nin   | string | The NIN to verify | ✅ Yes   |
+
+## Example Request
+
+```http
+POST /nin/verify HTTP/1.1
+Host: verification.nincomply.com
+Authorization: Bearer sk_test_bc59bfc4e500a9a76cd56572c8a15c7cf18081240b0fac514dd93746374dd9a3
+Content-Type: multipart/form-data
+
+nin=12345678901
+```
+
+## Response
+
+```json
 {
   "message": "Success"
 }
 ```
-</ResponseExample>
+
+## Try It
+
+<ApiPlayground
+  method="POST"
+  path="/nin/verify"
+  headers={{
+    "Authorization": "Bearer sk_test_bc59bfc4e500a9a76cd56572c8a15c7cf18081240b0fac514dd93746374dd9a3"
+  }}
+  contentType="multipart/form-data"
+  body={{
+    "nin": "12345678901"
+  }}
+/>

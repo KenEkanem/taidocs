@@ -99,16 +99,7 @@
     {
       "group": "Nin Comply",
       "pages": [
-        "api-reference/nincomply/admin",
-        "api-reference/nincomply/all_countries",
-        "api-reference/nincomply/api_keys",
-        "api-reference/nincomply/authentication",
-        "api-reference/nincomply/contact_us_message",
-        "api-reference/nincomply/dashboard",
-        "api-reference/nincomply/industries",
-        "api-reference/nincomply/instant_id_check"
-
-
+        "api-reference/nincomply/nimc"
       ]
     },
         {

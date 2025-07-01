@@ -24,7 +24,6 @@
       "fontFamily": "Menlo, monospace"
     }
   },
-  
   "tabs": [
     {
       "name": "API Reference",
@@ -45,7 +44,7 @@
     {
       "name": "Company Website",
       "icon": "globe",
-      "url": "https://www.trustandidentitycom"
+      "url": "https://www.trustandidentity.com"
     }
   ],
   "navigation": [
@@ -102,17 +101,16 @@
         "api-reference/nincomply/nimc"
       ]
     },
-        {
+    {
       "group": "Nin Profile",
       "pages": [
         "api-reference/ninprofile/all_countries",
         "api-reference/ninprofile/contact_us_message",
         "api-reference/ninprofile/pricing_table"
-
       ]
     },
     {
-      "group": "Resources ",
+      "group": "Resources",
       "pages": [
         "docs/faq",
         "docs/glossary"

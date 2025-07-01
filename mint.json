@@ -24,29 +24,14 @@
       "fontFamily": "Menlo, monospace"
     }
   },
+  
   "tabs": [
     {
       "name": "API Reference",
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Support",
-      "icon": "gear",
-      "url": "mailto:support@dragnet-solutions.com"
-    },
-    {
-      "name": "Contact Sales",
-      "icon": "envelope",
-      "url": "mailto:sales@dragnet-solutions.com"
-    },
-    {
-      "name": "Company Website",
-      "icon": "globe",
-      "url": "https://www.trustandidentity.com"
-    }
-  ],
+
   "navigation": [
     {
       "group": "Getting Started",
